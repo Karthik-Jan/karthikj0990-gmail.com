@@ -7,9 +7,10 @@ const App = () => {
     const [list, setList] = useState([]);
     const [description, setDescription] = useState('');
 
-    const createNote = () => {
+    const createNote = (e) => {
         const listArray = [...list];
-        if (description) {
+        debugger
+        if (description && (!e.key || e.key === 'Enter')) {
             listArray.push({desc: description, id: Date.now()});
             setList(listArray);
             setDescription('');

@@ -6,6 +6,9 @@ const InputField = ({description, setDescription, createNote}) => {
           <input id="inputValue"
                  type="text"
                  value={description}
+                 onKeyDown={(e) => {
+                     createNote(e)
+                 }}
                  onChange={(e) => {
                      setDescription(e.target.value)
                  }}/>
